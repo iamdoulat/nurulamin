@@ -42,7 +42,7 @@ export function HomePageClient({}: HomePageClientProps) {
     'দূর্নীতিমুক্ত প্রশাসন',
     'ব্যাপক কর্মসংস্থান তৈরী',
     'প্রযুক্তিগত উৎকর্ষ সাধন',
-    'মানসম্মত শিক্ষাব্যবস্থা নিশ্চিতকরণ',
+    'মানসম্মত শিক্ষাব্যবস্থা নিশ্চিতকরণ'
   ];
 
   return (
@@ -173,7 +173,7 @@ export function HomePageClient({}: HomePageClientProps) {
           >
             <div className="absolute inset-0 bg-[url('https://res.cloudinary.com/dzepzzvh8/image/upload/v1763665380/Nurulamin/vote-bg_jze1jf.png')] bg-no-repeat bg-center opacity-10" />
 
-            <p className="text-3xl text-gray-700 dark:text-gray-300">আসন্ন জাতীয় সংসদ নির্বাচনে চট্টগ্রাম-১৬, বাঁশখালী থেকে, ন্যায় ও ইনসাফের প্রতীক</p>
+            <p className="text-3xl text-gray-700 dark:text-gray-300">আসন্ন জাতীয় সংসদ নির্বাচনে চট্টগ্রাম-২ (ফটিকছড়ি) থেকে, ন্যায় ও ইনসাফের প্রতীক</p>
             <h2 className="text-8xl font-bold text-red-600 my-4 drop-shadow-lg">দাঁড়িপাল্লা, ইনশাআল্লাহ</h2>
           </motion.div>
         </div>
