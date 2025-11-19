@@ -12,6 +12,7 @@ import { Button } from './ui/button';
 import { SectionHeading } from './section-heading';
 import { ContactForm } from './contact-form';
 import { TypingAnimation } from './animations/typing-animation';
+import { PosterGenerator } from './poster-generator';
 
 type HomePageClientProps = {
   posts: BlogPost[];
@@ -164,6 +165,10 @@ export function HomePageClient({}: HomePageClientProps) {
       </section>
 
       <main>
+        <section id="poster-generator" className="container py-12 md:py-24">
+           <PosterGenerator />
+        </section>
+
         <section id="contact" className="container py-12 md:py-24">
           <SectionHeading
             title="Contact Me"
