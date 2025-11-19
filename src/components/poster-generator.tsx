@@ -118,7 +118,7 @@ export function PosterGenerator() {
                   dragConstraints={constraintsRef}
                 >
                   <motion.div
-                    className="w-full h-full bg-cover bg-center"
+                    className="w-full h-full bg-cover"
                     style={{ 
                       backgroundImage: `url(${uploadedImage})`,
                       scale: zoom,
