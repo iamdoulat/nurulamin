@@ -13,6 +13,7 @@ import { SectionHeading } from './section-heading';
 import { ContactForm } from './contact-form';
 import { TypingAnimation } from './animations/typing-animation';
 import { PosterGenerator } from './poster-generator';
+import { Separator } from './ui/separator';
 
 type HomePageClientProps = {
   posts: BlogPost[];
@@ -168,6 +169,10 @@ export function HomePageClient({}: HomePageClientProps) {
         <section id="poster-generator" className="container py-12 md:py-24">
            <PosterGenerator />
         </section>
+
+        <div className="container my-12">
+          <Separator />
+        </div>
 
         <section id="contact" className="container py-12 md:py-24">
           <SectionHeading
