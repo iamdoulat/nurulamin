@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Inter, Space_Grotesk } from 'next/font/google';
+import { Inter, Noto_Sans_Bengali } from 'next/font/google';
 import './globals.css';
 import { ThemeProvider } from '@/components/providers/theme-provider';
 import Header from '@/components/header';
@@ -9,9 +9,9 @@ import PageTransition from '@/components/animations/page-transition';
 import { siteConfig } from '@/lib/data';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
-const spaceGrotesk = Space_Grotesk({
-  subsets: ['latin'],
-  variable: '--font-space-grotesk',
+const noto SansBengali = Noto_Sans_Bengali({
+  subsets: ['bengali', 'latin'],
+  variable: '--font-noto-sans-bengali',
 });
 
 export const metadata: Metadata = {
@@ -56,12 +56,12 @@ export default function RootLayout({
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Space+Grotesk:wght@500;700&family=Noto+Sans+Bengali:wght@400;500;700&display=swap" rel="stylesheet" />
       </head>
-      <body className={`${inter.variable} ${spaceGrotesk.variable} font-body antialiased`}>
+      <body className={`${inter.variable} ${notoSansBengali.variable} font-body antialiased bg-background`}>
         <ThemeProvider
           attribute="class"
-          defaultTheme="system"
+          defaultTheme="dark"
           enableSystem
           disableTransitionOnChange
         >

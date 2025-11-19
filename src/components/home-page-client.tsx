@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowRight, Download, Mail, MapPin, Phone, Send } from 'lucide-react';
+import { ArrowRight, Check, Download, Mail, MapPin, Phone, Send } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 import type { BlogPost, Education, Experience, Project, Service, SkillCategory, Testimonial } from '@/lib/types';
@@ -45,11 +45,14 @@ export function HomePageClient({
     show: { opacity: 1, y: 0, transition: { type: 'spring' } },
   };
 
-  const profileImage = PlaceHolderImages.find((img) => img.id === 'profile-photo');
+  const candidateImage = PlaceHolderImages.find((img) => img.id === 'candidate-photo');
+  const visionPoints = [
+    'উন্নত যোগাযোগ', 'দূর্নীতিমুক্ত প্রশাসন', 'ব্যাপক কর্মসংস্থান তৈরী', 'প্রযুক্তিগত উৎকর্ষ সাধন', 'এবং মানসম্মত শিক্ষাব্যবস্থা নিশ্চিতকরণ'
+  ];
 
   return (
     <>
-      <section id="home" className="container py-24 sm:py-32">
+      <section id="home" className="container py-12 sm:py-20 bg-background text-white font-headline">
         <motion.div
           initial="hidden"
           whileInView="show"
@@ -63,55 +66,69 @@ export function HomePageClient({
               },
             },
           }}
-          className="grid grid-cols-1 md:grid-cols-5 gap-12 items-center"
+          className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
         >
-          <div className="md:col-span-3 space-y-6">
-            <motion.div variants={FADE_UP_ANIMATION_VARIANTS} className="text-primary font-medium">
-              Hey, I'm {user.name}
+          <div className="space-y-8">
+            <motion.div variants={FADE_UP_ANIMATION_VARIANTS} className="border border-primary/50 rounded-full px-8 py-3 text-center text-2xl text-primary shadow-[0_0_20px] shadow-primary/50">
+              আমাদের ভিশন!
             </motion.div>
             <motion.h1
               variants={FADE_UP_ANIMATION_VARIANTS}
-              className="text-4xl sm:text-5xl font-bold"
+              className="text-5xl md:text-6xl font-bold text-center"
             >
-              {user.role}
+              সমৃদ্ধ বাঁশখালী বিনির্মানে
             </motion.h1>
-            <motion.p
-              variants={FADE_UP_ANIMATION_VARIANTS}
-              className="text-lg text-muted-foreground"
-            >
-              {user.summary}
-            </motion.p>
+            <motion.ul variants={FADE_UP_ANIMATION_VARIANTS} className="grid grid-cols-2 gap-x-4 gap-y-2 text-lg">
+              {visionPoints.map((point, index) => (
+                <li key={index} className={`flex items-center gap-2 ${index === visionPoints.length -1 ? 'col-span-2' : ''}`}>
+                  <Check className="text-primary h-5 w-5" />
+                  <span>{point}</span>
+                </li>
+              ))}
+            </motion.ul>
+            <motion.h2 variants={FADE_UP_ANIMATION_VARIANTS} className="text-4xl font-bold text-center text-primary">
+              দূর্নীতিমুক্ত প্রশাসন
+            </motion.h2>
             <motion.div
               variants={FADE_UP_ANIMATION_VARIANTS}
-              className="flex items-center gap-4"
+              className="flex items-center justify-center gap-4"
             >
-              <Button asChild>
-                <Link href="#contact">
-                  Get in Touch <Send className="ml-2" />
-                </Link>
+              <Button variant="destructive" size="lg" className="bg-accent text-accent-foreground font-bold text-lg rounded-md border-2 border-accent hover:bg-accent/90">
+                Join With Us
               </Button>
-              <Button variant="outline" asChild>
-                <a href={siteConfig.links.cv} target="_blank" rel="noopener noreferrer">
-                  Download CV <Download className="ml-2" />
-                </a>
+              <Button variant="outline" size="lg" className="font-bold text-lg rounded-md border-2 border-white text-white bg-transparent hover:bg-white hover:text-background">
+                Donate Now
               </Button>
-            </motion.div>
-            <motion.div variants={FADE_UP_ANIMATION_VARIANTS}>
-              <SocialIcons />
             </motion.div>
           </div>
-          <motion.div variants={FADE_UP_ANIMATION_VARIANTS} className="md:col-span-2">
-            {profileImage && (
-              <Image
-                src={profileImage.imageUrl}
-                alt="Profile"
-                width={400}
-                height={400}
-                className="rounded-full mx-auto shadow-lg"
-                priority
-                data-ai-hint={profileImage.imageHint}
-              />
-            )}
+          <motion.div variants={FADE_UP_ANIMATION_VARIANTS} className="relative flex justify-center">
+            <div className="bg-gradient-to-br from-green-900 via-green-800 to-green-900/50 p-4 rounded-2xl shadow-2xl shadow-primary/20">
+              <div className="relative text-center p-4">
+                <div className="absolute inset-0 bg-[url('https://www.svgrepo.com/show/448259/balance.svg')] bg-no-repeat bg-center opacity-10 bg-contain " style={{ backgroundSize: '50%'}}></div>
+                <h3 className="text-3xl font-bold">সমৃদ্ধ বাঁশখালী</h3>
+                <p className="text-2xl mb-4">আমাদের অঙ্গীকার</p>
+                
+                {candidateImage && (
+                  <Image
+                    src={candidateImage.imageUrl}
+                    alt="অধ্যক্ষ জহিরুল ইসলাম"
+                    width={450}
+                    height={450}
+                    className="rounded-lg mx-auto shadow-lg relative z-10"
+                    priority
+                    data-ai-hint={candidateImage.imageHint}
+                  />
+                )}
+                
+                <div className="mt-4 relative z-10">
+                  <h2 className="text-5xl font-bold">অধ্যক্ষ জহিরুল ইসলাম</h2>
+                  <div className="inline-block bg-primary/80 text-primary-foreground px-6 py-2 rounded-lg mt-2 text-3xl font-semibold shadow-lg">
+                    সংসদ সদস্য পদপ্রার্থী
+                  </div>
+                  <p className="text-2xl mt-2">চট্টগ্রাম-১৬ (বাঁশখালী)</p>
+                </div>
+              </div>
+            </div>
           </motion.div>
         </motion.div>
       </section>
