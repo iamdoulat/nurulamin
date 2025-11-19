@@ -57,8 +57,10 @@ export function Footer() {
                 <p className="text-sm">সংসদ সদস্য পদপ্রার্থী, চট্টগ্রাম-২ (ফটিকছড়ি)</p>
                 <p className="text-xs mt-2">চট্টগ্রাম জেলা প্রতিনিধি: বাংলাদেশ জামায়াতে ইসলামীর কেন্দ্রীয় মজলিসে শূরা সদস্য, চট্টগ্রাম মহানগরী জামায়াতের সেক্রেটারি ও চট্টগ্রাম-২( ফটিকছড়ি) সংসদীয় আসনের এমপি প্রার্থী ।</p>
                 <div className="flex gap-2 mt-4 justify-center md:justify-start">
-                  <Button size="icon" variant="ghost" className="bg-blue-600 hover:bg-blue-700">
-                    <Facebook className="h-5 w-5 text-white" />
+                  <Button asChild size="icon" variant="ghost" className="bg-blue-600 hover:bg-blue-700">
+                    <a href="https://www.facebook.com/NurulAminctg2/" target="_blank" rel="noopener noreferrer">
+                      <Facebook className="h-5 w-5 text-white" />
+                    </a>
                   </Button>
                   <Button size="icon" variant="ghost" className="bg-sky-500 hover:bg-sky-600">
                     <Twitter className="h-5 w-5 text-white" />
