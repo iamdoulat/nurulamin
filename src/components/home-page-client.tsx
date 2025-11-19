@@ -125,7 +125,7 @@ export function HomePageClient({
                     src={candidateImage.imageUrl}
                     alt="অধ্যক্ষ মুহাম্মদ নুরুল আমিন"
                     width={450}
-                    height={450}
+                    height={488}
                     className="rounded-lg mx-auto shadow-lg relative z-10"
                     priority
                     data-ai-hint={candidateImage.imageHint}
