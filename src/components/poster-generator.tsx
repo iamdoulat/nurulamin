@@ -114,7 +114,7 @@ export function PosterGenerator() {
         <div className="md:order-2">
           <div
             ref={posterRef}
-            className="relative w-full max-w-[600px] mx-auto aspect-[1/1] overflow-hidden bg-gray-200 dark:bg-gray-800"
+            className="relative w-full max-w-[600px] mx-auto overflow-hidden bg-gray-200 dark:bg-gray-800"
             onWheel={handleWheel}
           >
             {uploadedImage && (
@@ -144,11 +144,12 @@ export function PosterGenerator() {
               <Image
                 src={posterFrameImage.imageUrl}
                 alt="Poster frame"
-                layout="fill"
-                objectFit="cover"
-                className="z-10 pointer-events-none"
+                width={600}
+                height={600}
+                className="w-full h-auto z-10 pointer-events-none"
                 data-ai-hint={posterFrameImage.imageHint}
                 crossOrigin="anonymous"
+                priority
               />
             )}
           </div>
