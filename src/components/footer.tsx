@@ -100,7 +100,7 @@ export function Footer() {
           <span>Copyright © {new Date().getFullYear()} Nurul Amin</span>
           <span className="mx-2">|</span>
           <span>
-            Developed by <a href="#" className="text-blue-400 hover:underline">Educellit</a>
+            Developed by <a href="https://vcard.mddoulat.com/iamdoulat" className="text-blue-400 hover:underline">mddoulat</a>
           </span>
         </div>
         <Button
