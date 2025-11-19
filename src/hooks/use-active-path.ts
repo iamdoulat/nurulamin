@@ -9,7 +9,7 @@ export function useActivePath() {
     if (path === '/' && pathname !== '/') {
       return false;
     }
-    return pathname.startsWith(path);
+    return pathname === path || (path !== '/' && pathname.startsWith(path));
   };
 
   return checkActivePath;

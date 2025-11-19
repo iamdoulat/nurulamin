@@ -31,15 +31,14 @@ export const siteConfig = {
 };
 
 export const navItems: NavItem[] = [
-  { title: 'Home', href: '/' },
-  { title: 'About', href: '/about' },
-  { title: 'Skills', href: '/skills' },
-  { title: 'Projects', href: '/projects' },
-  { title: 'Services', href: '/services' },
-  { title: 'Testimonials', href: '/testimonials' },
-  { title: 'Blog', href: '/blog' },
-  { title: 'Contact', href: '/contact' },
-  { title: 'Assessment', href: '/skills-assessment' },
+  { title: 'Home', href: '#home' },
+  { title: 'About', href: '#about' },
+  { title: 'Skills', href: '#skills' },
+  { title: 'Projects', href: '#projects' },
+  { title: 'Services', href: '#services' },
+  { title: 'Testimonials', href: '#testimonials' },
+  { title: 'Blog', href: '#blog' },
+  { title: 'Contact', href: '#contact' },
 ];
 
 export const socialLinks: { name: string; href: string; icon: LucideIcon }[] = [
@@ -132,30 +131,30 @@ export const services: Service[] = [
     title: 'Web Development',
     description:
       'Building fully responsive and high-performance websites from the ground up using modern technologies like Next.js and React.',
-    icon: Code,
+    icon: 'Code',
   },
   {
     title: 'UI/UX Design',
     description:
       'Designing intuitive and engaging user interfaces that provide a seamless user experience, with a focus on accessibility.',
-    icon: Palette,
+    icon: 'Palette',
   },
   {
     title: 'API Development',
     description:
       'Creating robust and scalable RESTful APIs to power your applications, ensuring secure and efficient data transfer.',
-    icon: Server,
+    icon: 'Server',
   },
   {
     title: 'SEO Optimization',
     description:
       'Improving your website’s visibility on search engines through technical SEO best practices, boosting organic traffic.',
-    icon: Search,
+    icon: 'Search',
   },
   {
     title: 'Webhook Integration',
     description: 'Seamlessly connect your applications with third-party services, enabling real-time data synchronization and automation.',
-    icon: Webhook
+    icon: 'Webhook'
   }
 ];
 

@@ -2,43 +2,75 @@
 
 import Link from 'next/link';
 import { Menu, Mountain } from 'lucide-react';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 import { navItems, siteConfig } from '@/lib/data';
 import { cn } from '@/lib/utils';
-import { useActivePath } from '@/hooks/use-active-path';
 import { Button } from './ui/button';
 import { Sheet, SheetContent, SheetTrigger } from './ui/sheet';
 import { ThemeToggle } from './theme-toggle';
 
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const checkActivePath = useActivePath();
+  const [activeSection, setActiveSection] = useState('home');
 
-  const NavLink = ({ href, title }: { href: string; title: string }) => (
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = navItems.map((item) => document.getElementById(item.href.substring(1)));
+      const scrollPosition = window.scrollY + 100;
+
+      let currentSection = 'home';
+      for (let i = sections.length - 1; i >= 0; i--) {
+        const section = sections[i];
+        if (section && section.offsetTop <= scrollPosition) {
+          currentSection = section.id;
+          break;
+        }
+      }
+      setActiveSection(currentSection);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const NavLink = ({ href, title }: { href: string; title: string }) => {
+    const isActive = activeSection === href.substring(1);
+    return (
     <Link
       href={href}
       className={cn(
         'relative text-sm font-medium text-muted-foreground transition-colors hover:text-primary',
-        checkActivePath(href) && 'text-primary'
+        isActive && 'text-primary'
       )}
-      onClick={() => isMobileMenuOpen && setIsMobileMenuOpen(false)}
+      onClick={(e) => {
+        if (href.startsWith('#')) {
+          e.preventDefault();
+          document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' });
+          if (isMobileMenuOpen) setIsMobileMenuOpen(false);
+        } else {
+           if (isMobileMenuOpen) setIsMobileMenuOpen(false);
+        }
+      }}
     >
       {title}
-      {checkActivePath(href) && (
+      {isActive && (
         <motion.span
           layoutId="underline"
           className="absolute left-0 top-full block h-[2px] w-full bg-primary"
         />
       )}
     </Link>
-  );
+  )};
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur-sm">
       <div className="container flex h-16 items-center">
-        <Link href="/" className="mr-6 flex items-center space-x-2">
+        <Link href="#home" className="mr-6 flex items-center space-x-2" onClick={(e) => {
+          e.preventDefault();
+          document.querySelector('#home')?.scrollIntoView({ behavior: 'smooth' });
+        }}>
           <Mountain className="h-6 w-6 text-primary" />
           <span className="hidden font-bold sm:inline-block">{siteConfig.name}</span>
         </Link>
@@ -59,7 +91,11 @@ export default function Header() {
               </Button>
             </SheetTrigger>
             <SheetContent side="left">
-              <Link href="/" className="mr-6 flex items-center space-x-2">
+              <Link href="#home" className="mr-6 flex items-center space-x-2" onClick={(e) => {
+                  e.preventDefault();
+                  document.querySelector('#home')?.scrollIntoView({ behavior: 'smooth' });
+                  setIsMobileMenuOpen(false);
+                }}>
                 <Mountain className="h-6 w-6 text-primary" />
                 <span className="font-bold">{siteConfig.name}</span>
               </Link>
