@@ -68,20 +68,23 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur-sm">
       <div className="container flex h-16 items-center">
-        <Link href="#home" className="mr-6 flex items-center space-x-2" onClick={(e) => {
-          e.preventDefault();
-          document.querySelector('#home')?.scrollIntoView({ behavior: 'smooth' });
-        }}>
-          <Image src="https://res.cloudinary.com/dzepzzvh8/image/upload/v1763565587/Nurulamin/logo_qbjmpf.png" alt={siteConfig.name} width={140} height={40} />
-        </Link>
-        <nav className="relative hidden items-center space-x-6 text-sm font-medium md:flex">
-          <AnimatePresence>
-            {navItems.map((item) => (
-              <NavLink key={item.href} {...item} />
-            ))}
-          </AnimatePresence>
-        </nav>
+        <div className="flex-1 flex items-center justify-start">
+            <Link href="#home" className="mr-6 flex items-center space-x-2" onClick={(e) => {
+            e.preventDefault();
+            document.querySelector('#home')?.scrollIntoView({ behavior: 'smooth' });
+            }}>
+            <Image src="https://res.cloudinary.com/dzepzzvh8/image/upload/v1763565587/Nurulamin/logo_qbjmpf.png" alt={siteConfig.name} width={140} height={40} />
+            </Link>
+        </div>
+        
         <div className="flex flex-1 items-center justify-end space-x-4">
+          <nav className="relative hidden items-center space-x-6 text-sm font-medium md:flex">
+            <AnimatePresence>
+              {navItems.map((item) => (
+                <NavLink key={item.href} {...item} />
+              ))}
+            </AnimatePresence>
+          </nav>
           <ThemeToggle />
           <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
             <SheetTrigger asChild className="md:hidden">
