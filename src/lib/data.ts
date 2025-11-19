@@ -1,3 +1,4 @@
+
 import {
   Code,
   Github,
@@ -32,12 +33,6 @@ export const siteConfig = {
 
 export const navItems: NavItem[] = [
   { title: 'Home', href: '#home' },
-  { title: 'About', href: '#about' },
-  { title: 'Skills', href: '#skills' },
-  { title: 'Projects', href: '#projects' },
-  { title: 'Services', href: '#services' },
-  { title: 'Testimonials', href: '#testimonials' },
-  { title: 'Blog', href: '#blog' },
   { title: 'Contact', href: '#contact' },
 ];
 
