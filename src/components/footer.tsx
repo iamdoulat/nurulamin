@@ -55,6 +55,7 @@ export function Footer() {
               <div>
                 <h3 className="text-2xl font-bold">অধ্যক্ষ মুহাম্মদ নুরুল আমিন</h3>
                 <p className="text-sm">সংসদ সদস্য পদপ্রার্থী, চট্টগ্রাম-২ (ফটিকছড়ি)</p>
+                <p className="text-xs mt-2">চট্টগ্রাম জেলা প্রতিনিধি: বাংলাদেশ জামায়াতে ইসলামীর কেন্দ্রীয় মজলিসে শূরা সদস্য, চট্টগ্রাম মহানগরী জামায়াতের সেক্রেটারি ও চট্টগ্রাম-২( ফটিকছড়ি) সংসদীয় আসনের এমপি প্রার্থী ।</p>
                 <div className="flex gap-2 mt-4 justify-center md:justify-start">
                   <Button size="icon" variant="ghost" className="bg-blue-600 hover:bg-blue-700">
                     <Facebook className="h-5 w-5 text-white" />
