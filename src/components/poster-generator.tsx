@@ -117,9 +117,9 @@ export function PosterGenerator() {
             className="relative w-full max-w-[600px] mx-auto overflow-hidden bg-gray-200 dark:bg-gray-800"
             onWheel={handleWheel}
           >
-            {uploadedImage && (
+             {uploadedImage && (
               <motion.div
-                className="absolute w-full h-full cursor-grab active:cursor-grabbing"
+                className="absolute w-full h-full cursor-grab active:cursor-grabbing z-0"
                 drag
                 onDrag={handleDrag}
                 dragConstraints={{
@@ -131,7 +131,7 @@ export function PosterGenerator() {
                 dragMomentum={false}
               >
                 <motion.div
-                  className="w-full h-full bg-cover"
+                  className="w-full h-full bg-cover bg-center"
                   style={{ 
                     backgroundImage: `url(${uploadedImage})`,
                   }}
@@ -146,7 +146,7 @@ export function PosterGenerator() {
                 alt="Poster frame"
                 width={600}
                 height={600}
-                className="w-full h-auto z-10 pointer-events-none"
+                className="relative w-full h-auto z-10 pointer-events-none"
                 data-ai-hint={posterFrameImage.imageHint}
                 crossOrigin="anonymous"
                 priority
