@@ -156,7 +156,7 @@ export function HomePageClient({}: HomePageClientProps) {
             className="text-center mt-12 relative"
           >
             <div className="absolute inset-0 bg-[url('https://res.cloudinary.com/dzepzzvh8/image/upload/v1763665380/Nurulamin/vote-bg_jze1jf.png')] bg-no-repeat bg-center opacity-10" />
-            <p className="text-3xl text-gray-200 dark:text-gray-300">আসন্ন জাতীয় সংসদ নির্বাচনে চট্টগ্রাম-২ (ফটিকছড়ি) থেকে, ন্যায় ও ইনসাফের প্রতীক</p>
+            <p className="text-3xl text-gray-200 dark:text-gray-300">আসন্ন ত্রয়োদশ জাতীয় সংসদ নির্বাচনে চট্টগ্রাম-২ (ফটিকছড়ি) থেকে, ন্যায় ও ইনসাফের প্রতীক</p>
             <h2 className="text-8xl font-bold text-white my-4 drop-shadow-lg">দাঁড়িপাল্লা, ইনশাআল্লাহ</h2>
           </motion.div>
           </motion.div>
