@@ -52,7 +52,7 @@ export function HomePageClient({
 
   return (
     <>
-      <section id="home" className="container py-12 sm:py-20 bg-[hsl(140_70%_10%)] text-white font-headline">
+      <section id="home" className="py-12 sm:py-20 bg-[hsl(140_70%_10%)] text-white font-headline">
         <motion.div
           initial="hidden"
           whileInView="show"
@@ -66,9 +66,9 @@ export function HomePageClient({
               },
             },
           }}
-          className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
+          className="container grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
         >
-          <div className="space-y-8">
+          <div className="space-y-8 lg:order-1 order-2">
             <motion.div variants={FADE_UP_ANIMATION_VARIANTS} className="border border-primary/50 rounded-full px-8 py-3 text-center text-2xl text-primary shadow-[0_0_20px] shadow-primary/50">
               আমাদের ভিশন!
             </motion.div>
@@ -101,7 +101,7 @@ export function HomePageClient({
               </Button>
             </motion.div>
           </div>
-          <motion.div variants={FADE_UP_ANIMATION_VARIANTS} className="relative flex justify-center">
+          <motion.div variants={FADE_UP_ANIMATION_VARIANTS} className="relative flex justify-center lg:order-2 order-1">
             <div className="bg-gradient-to-br from-green-900 via-green-800 to-green-900/50 p-4 rounded-2xl shadow-2xl shadow-primary/20">
               <div className="relative text-center p-4">
                 <div className="absolute inset-0 bg-[url('https://www.svgrepo.com/show/448259/balance.svg')] bg-no-repeat bg-center opacity-10 bg-contain" style={{ backgroundSize: '50%'}}></div>
@@ -123,7 +123,7 @@ export function HomePageClient({
                 <div className="mt-4 relative z-10">
                   <h2 className="text-5xl font-bold">অধ্যক্ষ মুহাম্মদ নুরুল আমিন</h2>
                   <div className="inline-block bg-primary/80 text-primary-foreground px-6 py-2 rounded-lg mt-2 text-3xl font-semibold shadow-lg">
-                    সংসদ সদস্য पदप्रার্থী
+                    সংসদ সদস্য পদপ্রার্থী
                   </div>
                   <p className="text-2xl mt-2">ফটিকছড়ি-২</p>
                 </div>
