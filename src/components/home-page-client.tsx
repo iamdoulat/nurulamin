@@ -94,6 +94,7 @@ export function HomePageClient({
               <ul className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-xl text-center">
                 {visionPoints.map((point, index) => (
                   <li key={index} className="flex items-center gap-2">
+                    <span className='text-primary'>••</span>
                     <span>{point}{index < visionPoints.length - 1 ? ',' : ''}</span>
                   </li>
                 ))}
