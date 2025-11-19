@@ -17,6 +17,7 @@ import { Timeline } from './timeline';
 import { SkillsGrid } from './skills-grid';
 import { ServiceCard } from './service-card';
 import { BlogCard } from './blog-card';
+import { TypingAnimation } from './animations/typing-animation';
 
 type HomePageClientProps = {
   posts: BlogPost[];
@@ -45,8 +46,17 @@ export function HomePageClient({
   };
 
   const candidateImage = PlaceHolderImages.find((img) => img.id === 'candidate-photo');
+  
   const visionPoints = [
     'উন্নত যোগাযোগ', 'দূর্নীতিমুক্ত প্রশাসন', 'ব্যাপক কর্মসংস্থান তৈরী', 'প্রযুক্তিগত উৎকর্ষ সাধন', 'এবং মানসম্মত শিক্ষাব্যবস্থা নিশ্চিতকরণ'
+  ];
+
+  const animatedPhrases = [
+    'উন্নত যোগাযোগ',
+    'দূর্নীতিমুক্ত প্রশাসন',
+    'ব্যাপক কর্মসংস্থান তৈরী',
+    'প্রযুক্তিগত উৎকর্ষ সাধন',
+    'মানসম্মত শিক্ষাব্যবস্থা নিশ্চিতকরণ',
   ];
 
   return (
@@ -77,17 +87,9 @@ export function HomePageClient({
             >
               সমৃদ্ধ ফটিকছড়ি বিনির্মানে
             </motion.h1>
-            <motion.ul variants={FADE_UP_ANIMATION_VARIANTS} className="grid grid-cols-2 gap-x-4 gap-y-2 text-lg">
-              {visionPoints.map((point, index) => (
-                <li key={index} className={`flex items-center gap-2 ${index === visionPoints.length -1 ? 'col-span-2' : ''}`}>
-                  <Check className="text-primary h-5 w-5" />
-                  <span>{point}</span>
-                </li>
-              ))}
-            </motion.ul>
-            <motion.h2 variants={FADE_UP_ANIMATION_VARIANTS} className="text-4xl font-bold text-center text-primary">
-              দূর্নীতিমুক্ত প্রশাসন
-            </motion.h2>
+            
+            <TypingAnimation phrases={animatedPhrases} />
+
             <motion.div
               variants={FADE_UP_ANIMATION_VARIANTS}
               className="flex items-center justify-center gap-4"
@@ -104,7 +106,7 @@ export function HomePageClient({
             <div className="bg-gradient-to-br from-green-900 via-green-800 to-green-900/50 p-4 rounded-2xl shadow-2xl shadow-primary/20">
               <div className="relative text-center p-4">
                 <div className="absolute inset-0 bg-[url('https://www.svgrepo.com/show/448259/balance.svg')] bg-no-repeat bg-center opacity-10 bg-contain" style={{ backgroundSize: '50%'}}></div>
-                <h3 className="text-3xl font-bold">সমৃদ্ধ ফটিকছড়ি</h3>
+                <h3 className="text-5xl font-bold">সমৃদ্ধ ফটিকছড়ি</h3>
                 <p className="text-2xl mb-4">আমাদের অঙ্গীকার</p>
                 
                 {candidateImage && (
