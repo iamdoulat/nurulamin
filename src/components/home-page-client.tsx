@@ -1,13 +1,12 @@
 'use client';
 
 import Image from 'next/image';
-import Link from 'next/link';
-import { ArrowRight, Check, Download, Mail, MapPin, Phone, Send } from 'lucide-react';
+import { Check } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 import type { BlogPost, Education, Experience, Project, Service, SkillCategory, Testimonial } from '@/lib/types';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
-import { about, siteConfig, user } from '@/lib/data';
+import { about } from '@/lib/data';
 import { Button } from './ui/button';
 import { SectionHeading } from './section-heading';
 import { ProjectCard } from './project-card';
@@ -16,7 +15,6 @@ import { ContactForm } from './contact-form';
 import { Timeline } from './timeline';
 import { SkillsGrid } from './skills-grid';
 import { ServiceCard } from './service-card';
-import { SocialIcons } from './social-icons';
 import { BlogCard } from './blog-card';
 
 type HomePageClientProps = {
@@ -52,7 +50,7 @@ export function HomePageClient({
 
   return (
     <>
-      <section id="home" className="py-12 sm:py-20 bg-[hsl(140_70%_10%)] text-white font-headline">
+      <section id="home" className="bg-[hsl(140_70%_10%)] text-white font-headline">
         <motion.div
           initial="hidden"
           whileInView="show"
@@ -66,7 +64,7 @@ export function HomePageClient({
               },
             },
           }}
-          className="container grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
+          className="container grid grid-cols-1 lg:grid-cols-2 gap-12 items-center pt-[10px] pb-12 sm:pb-20"
         >
           <div className="space-y-8 lg:order-1 order-2">
             <motion.div variants={FADE_UP_ANIMATION_VARIANTS} className="border border-primary/50 rounded-full px-8 py-3 text-center text-2xl text-primary shadow-[0_0_20px] shadow-primary/50">
@@ -232,42 +230,6 @@ export function HomePageClient({
           className="mb-12"
         />
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-          <div className="space-y-8">
-            <div className="flex items-start gap-4">
-              <div className="bg-primary/10 text-primary p-3 rounded-full">
-                <Mail className="h-6 w-6" />
-              </div>
-              <div>
-                <h3 className="text-xl font-semibold">Email</h3>
-                <p className="text-muted-foreground">Drop me a line anytime.</p>
-                <a href="mailto:contact@example.com" className="text-primary hover:underline">
-                  contact@example.com
-                </a>
-              </div>
-            </div>
-            <div className="flex items-start gap-4">
-              <div className="bg-primary/10 text-primary p-3 rounded-full">
-                <Phone className="h-6 w-6" />
-              </div>
-              <div>
-                <h3 className="text-xl font-semibold">Phone</h3>
-                <p className="text-muted-foreground">Available during business hours.</p>
-                <a href="tel:+1234567890" className="text-primary hover:underline">
-                  +1 (234) 567-890
-                </a>
-              </div>
-            </div>
-            <div className="flex items-start gap-4">
-              <div className="bg-primary/10 text-primary p-3 rounded-full">
-                <MapPin className="h-6 w-6" />
-              </div>
-              <div>
-                <h3 className="text-xl font-semibold">Location</h3>
-                <p className="text-muted-foreground">San Francisco, CA</p>
-                <p className="text-primary">Open to remote work</p>
-              </div>
-            </div>
-          </div>
           <div>
             <ContactForm />
           </div>
