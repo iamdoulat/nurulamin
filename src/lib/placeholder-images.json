@@ -9,7 +9,7 @@
     {
       "id": "candidate-photo",
       "description": "Photo of the election candidate.",
-      "imageUrl": "https://res.cloudinary.com/dzepzzvh8/image/upload/v1763562595/Nurulamin/hero_efircs.jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxwb2xpdGljYWwlMjBjYW5kaWRhdGV8ZW58MHx8fHwxNzYzNDcyNzcxfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageUrl": "https://res.cloudinary.com/dzepzzvh8/image/upload/v1763562595/Nurulamin/hero_efircs.jpg",
       "imageHint": "political candidate"
     },
     {
