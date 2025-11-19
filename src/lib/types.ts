@@ -52,3 +52,10 @@ export type BlogPost = {
   content: string;
   image: string;
 };
+
+export type Testimonial = {
+  name: string;
+  role: string;
+  avatar: string;
+  testimonial: string;
+};

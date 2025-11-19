@@ -9,7 +9,7 @@ import {
   Twitter,
   Webhook,
 } from 'lucide-react';
-import type { Education, Experience, NavItem, Service, SkillCategory } from './types';
+import type { Education, Experience, NavItem, Service, SkillCategory, Testimonial } from './types';
 
 export const user = {
   name: 'John Doe',
@@ -36,6 +36,7 @@ export const navItems: NavItem[] = [
   { title: 'Skills', href: '/skills' },
   { title: 'Projects', href: '/projects' },
   { title: 'Services', href: '/services' },
+  { title: 'Testimonials', href: '/testimonials' },
   { title: 'Blog', href: '/blog' },
   { title: 'Contact', href: '/contact' },
   { title: 'Assessment', href: '/skills-assessment' },
@@ -156,4 +157,36 @@ export const services: Service[] = [
     description: 'Seamlessly connect your applications with third-party services, enabling real-time data synchronization and automation.',
     icon: Webhook
   }
+];
+
+
+export const testimonials: Testimonial[] = [
+  {
+    name: 'Sarah Johnson',
+    role: 'CEO, TechCorp',
+    avatar: 'testimonial-avatar-1',
+    testimonial:
+      "Working with John was an absolute pleasure. Their expertise in frontend development is unmatched. They delivered a high-quality product on time and exceeded our expectations. I can't recommend them enough.",
+  },
+  {
+    name: 'Michael Chen',
+    role: 'Product Manager, Innovate LLC',
+    avatar: 'testimonial-avatar-2',
+    testimonial:
+      'John is a true professional. They are not only a talented developer but also a great communicator. They kept us in the loop throughout the project and were always open to feedback. The final product was a huge success.',
+  },
+  {
+    name: 'Emily Rodriguez',
+    role: 'Marketing Director, Creative Solutions',
+    avatar: 'testimonial-avatar-3',
+    testimonial:
+      "John's attention to detail is incredible. They transformed our outdated website into a modern, user-friendly platform that has significantly boosted our online presence. We've seen a 50% increase in user engagement since the relaunch.",
+  },
+  {
+    name: 'David Lee',
+    role: 'CTO, StartupX',
+    avatar: 'testimonial-avatar-4',
+    testimonial:
+      "I've worked with many developers, and John is one of the best. Their ability to solve complex problems and write clean, efficient code is remarkable. They were a key player in the success of our latest project.",
+  },
 ];
