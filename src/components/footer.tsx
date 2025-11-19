@@ -29,7 +29,6 @@ export function Footer() {
   const footerNav = [
     { name: 'News', icon: Newspaper, href: '#' },
     { name: 'Menifesto', icon: ScrollText, href: '#' },
-    { name: 'Donation', icon: CreditCard, href: '#' },
     { name: 'Buy and Support', icon: ShoppingCart, href: '#' },
     { name: 'Gallery', icon: GalleryVertical, href: '#' },
   ];
