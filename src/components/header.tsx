@@ -1,9 +1,10 @@
 'use client';
 
 import Link from 'next/link';
-import { Menu, Mountain } from 'lucide-react';
+import { Menu } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import Image from 'next/image';
 
 import { navItems, siteConfig } from '@/lib/data';
 import { cn } from '@/lib/utils';
@@ -71,8 +72,7 @@ export default function Header() {
           e.preventDefault();
           document.querySelector('#home')?.scrollIntoView({ behavior: 'smooth' });
         }}>
-          <Mountain className="h-6 w-6 text-primary" />
-          <span className="hidden font-bold sm:inline-block">{siteConfig.name}</span>
+          <Image src="https://res.cloudinary.com/dzepzzvh8/image/upload/v1763565587/Nurulamin/logo_qbjmpf.png" alt={siteConfig.name} width={140} height={40} />
         </Link>
         <nav className="relative hidden items-center space-x-6 text-sm font-medium md:flex">
           <AnimatePresence>
@@ -96,8 +96,7 @@ export default function Header() {
                   document.querySelector('#home')?.scrollIntoView({ behavior: 'smooth' });
                   setIsMobileMenuOpen(false);
                 }}>
-                <Mountain className="h-6 w-6 text-primary" />
-                <span className="font-bold">{siteConfig.name}</span>
+                 <Image src="https://res.cloudinary.com/dzepzzvh8/image/upload/v1763565587/Nurulamin/logo_qbjmpf.png" alt={siteConfig.name} width={140} height={40} />
               </Link>
               <div className="mt-6 flex flex-col space-y-4">
                 {navItems.map((item) => (
