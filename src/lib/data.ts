@@ -20,7 +20,7 @@ export const user = {
 };
 
 export const siteConfig = {
-  name: 'Persona Folio',
+  name: 'Mohammad Nurul Amin',
   description: 'A modern portfolio website built with Next.js, Tailwind CSS, and Framer Motion.',
   url: 'https://personafolio.example.com',
   links: {
