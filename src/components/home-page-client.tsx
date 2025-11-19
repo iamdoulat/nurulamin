@@ -111,7 +111,7 @@ export function HomePageClient({}: HomePageClientProps) {
               <div className="relative text-center p-4">
                 <div className="absolute inset-0 bg-[url('https://www.svgrepo.com/show/448259/balance.svg')] bg-no-repeat bg-center opacity-10 bg-contain" style={{ backgroundSize: '50%'}}></div>
                 <h3 className="text-5xl pt-3 font-bold animate-text-gradient">সমৃদ্ধ ফটিকছড়ি</h3>
-                <p className="text-2xl mb-4">আমাদের অঙ্গীকার</p>
+                <p className="text-2xl mb-4 text-white">আমাদের অঙ্গীকার</p>
                 
                 {candidateImage && (
                   <Image
@@ -126,11 +126,11 @@ export function HomePageClient({}: HomePageClientProps) {
                 )}
                 
                 <div className="mt-4 relative z-10">
-                  <h2 className="text-5xl pt-2 font-bold">অধ্যক্ষ মুহাম্মদ নুরুল আমিন</h2>
+                  <h2 className="text-5xl pt-2 font-bold text-white">অধ্যক্ষ মুহাম্মদ নুরুল আমিন</h2>
                   <div className="inline-block bg-primary/80 text-primary-foreground px-6 py-2 rounded-lg mt-2 text-3xl font-semibold shadow-lg">
                     সংসদ সদস্য পদপ্রার্থী
                   </div>
-                  <p className="text-2xl mt-2">চট্টগ্রাম-২ (ফটিকছড়ি)</p>
+                  <p className="text-2xl mt-2 text-white">চট্টগ্রাম-২ (ফটিকছড়ি)</p>
                 </div>
               </div>
             </div>
@@ -148,20 +148,20 @@ export function HomePageClient({}: HomePageClientProps) {
             className="bg-gradient-to-r from-green-700 via-green-800 to-red-800 text-white rounded-xl shadow-2xl p-8 border-4 border-white"
           >
             <h3 className="text-4xl text-center font-bold mb-8">জনপদের সেবায়, জনতার ভালোবাসায়</h3>
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 text-center">
-              <div>
-                <p className="text-6xl font-bold text-yellow-300">4 টি</p>
-                <p className="text-2xl mt-2">নির্বাচনের মধ্যে</p>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center mt-8">
+                <div>
+                  <h4 className="text-6xl font-bold">4 টি</h4>
+                  <p className="text-xl mt-2">নির্বাচনের মধ্যে</p>
+                </div>
+                <div>
+                  <h4 className="text-6xl font-bold text-yellow-300">3 টি</h4>
+                  <p className="text-xl mt-2">নির্বাচনে বিজয়</p>
+                </div>
+                <div>
+                  <h4 className="text-6xl font-bold">162,000+</h4>
+                  <p className="text-xl mt-2">জনতার রায়</p>
+                </div>
               </div>
-              <div>
-                <p className="text-6xl font-bold text-yellow-300">3 টি</p>
-                <p className="text-2xl mt-2">নির্বাচনে বিজয়</p>
-              </div>
-              <div>
-                <p className="text-6xl font-bold text-yellow-300">162,000+</p>
-                <p className="text-2xl mt-2">জনতার রায়</p>
-              </div>
-            </div>
           </motion.div>
           
           <motion.div 
