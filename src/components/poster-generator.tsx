@@ -10,13 +10,14 @@ import { Label } from './ui/label';
 import { Card, CardContent } from './ui/card';
 import { Download, ZoomIn, ZoomOut } from 'lucide-react';
 import { Slider } from './ui/slider';
-import { motion } from 'framer-motion';
+import { motion, useDragControls } from 'framer-motion';
 
 export function PosterGenerator() {
   const [uploadedImage, setUploadedImage] = useState<string | null>(null);
-  const [zoom, setZoom] = useState(100);
+  const [zoom, setZoom] = useState(1);
   const posterRef = useRef<HTMLDivElement>(null);
   const constraintsRef = useRef<HTMLDivElement>(null);
+  const dragControls = useDragControls();
 
   const posterFrameImage = PlaceHolderImages.find((img) => img.id === 'poster-frame');
 
@@ -25,7 +26,7 @@ export function PosterGenerator() {
       const reader = new FileReader();
       reader.onload = (e) => {
         setUploadedImage(e.target?.result as string);
-        setZoom(100);
+        setZoom(1);
       };
       reader.readAsDataURL(event.target.files[0]);
     }
@@ -84,9 +85,9 @@ export function PosterGenerator() {
                     <ZoomOut className="h-5 w-5" />
                     <Slider
                       id="zoom-slider"
-                      min={50}
-                      max={300}
-                      step={1}
+                      min={0.5}
+                      max={3}
+                      step={0.01}
                       value={[zoom]}
                       onValueChange={handleZoomChange}
                     />
@@ -111,18 +112,19 @@ export function PosterGenerator() {
             <div ref={constraintsRef} className="absolute inset-0 z-0">
               {uploadedImage && (
                 <motion.div
-                  drag
-                  dragConstraints={constraintsRef}
                   className="w-full h-full cursor-grab active:cursor-grabbing"
+                  drag
+                  dragControls={dragControls}
+                  dragConstraints={constraintsRef}
                 >
-                  <div
-                    className="w-full h-full"
-                    style={{
+                  <motion.div
+                    className="w-full h-full bg-cover bg-center"
+                    style={{ 
                       backgroundImage: `url(${uploadedImage})`,
-                      backgroundSize: `${zoom}%`,
-                      backgroundPosition: 'center',
-                      backgroundRepeat: 'no-repeat',
-                    }}
+                      scale: zoom,
+                     }}
+                    animate={{ scale: zoom }}
+                    transition={{ type: "spring", stiffness: 300, damping: 30 }}
                   />
                 </motion.div>
               )}
