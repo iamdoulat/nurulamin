@@ -71,7 +71,7 @@ export function PosterGenerator() {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
-        <div className="space-y-4">
+        <div className="space-y-4 md:order-1">
           <Card>
             <CardContent className="p-6">
               <h3 className="text-xl font-bold mb-2">Upload Your Photo</h3>
@@ -97,7 +97,7 @@ export function PosterGenerator() {
           </Button>
         </div>
 
-        <div>
+        <div className="md:order-2">
           <div
             ref={posterRef}
             className="relative w-full max-w-[600px] mx-auto aspect-[1/1] overflow-hidden bg-gray-200 dark:bg-gray-800"
