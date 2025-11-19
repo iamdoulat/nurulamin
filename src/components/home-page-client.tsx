@@ -88,8 +88,6 @@ export function HomePageClient({
               সমৃদ্ধ ফটিকছড়ি বিনির্মানে
             </motion.h1>
             
-            <TypingAnimation phrases={animatedPhrases} />
-
             <motion.div variants={FADE_UP_ANIMATION_VARIANTS}>
               <ul className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-xl text-center">
                 {visionPoints.map((point, index) => (
@@ -100,6 +98,8 @@ export function HomePageClient({
                 ))}
               </ul>
             </motion.div>
+
+            <TypingAnimation phrases={animatedPhrases} />
 
             <motion.div
               variants={FADE_UP_ANIMATION_VARIANTS}
