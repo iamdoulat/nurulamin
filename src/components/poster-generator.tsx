@@ -8,10 +8,12 @@ import { Button } from './ui/button';
 import { Input } from './ui/input';
 import { Label } from './ui/label';
 import { Card, CardContent } from './ui/card';
-import { Download } from 'lucide-react';
+import { Download, ZoomIn, ZoomOut } from 'lucide-react';
+import { Slider } from './ui/slider';
 
 export function PosterGenerator() {
   const [uploadedImage, setUploadedImage] = useState<string | null>(null);
+  const [zoom, setZoom] = useState(100);
   const posterRef = useRef<HTMLDivElement>(null);
 
   const posterFrameImage = PlaceHolderImages.find((img) => img.id === 'poster-frame');
@@ -21,6 +23,7 @@ export function PosterGenerator() {
       const reader = new FileReader();
       reader.onload = (e) => {
         setUploadedImage(e.target?.result as string);
+        setZoom(100);
       };
       reader.readAsDataURL(event.target.files[0]);
     }
@@ -40,6 +43,10 @@ export function PosterGenerator() {
       });
     }
   };
+  
+  const handleZoomChange = (value: number[]) => {
+    setZoom(value[0]);
+  };
 
   return (
     <section>
@@ -58,6 +65,24 @@ export function PosterGenerator() {
                         <Input id="photo-upload" type="file" accept="image/jpeg, image/png, image/gif" onChange={handleImageUpload} />
                     </div>
                     <p className="text-xs text-muted-foreground mt-2">Accepted file types: JPG, PNG, GIF</p>
+
+                    {uploadedImage && (
+                        <div className="mt-4 space-y-2">
+                            <Label htmlFor="zoom-slider">Adjust Zoom</Label>
+                            <div className="flex items-center gap-2">
+                                <ZoomOut className="h-5 w-5" />
+                                <Slider
+                                    id="zoom-slider"
+                                    min={50}
+                                    max={200}
+                                    step={1}
+                                    value={[zoom]}
+                                    onValueChange={handleZoomChange}
+                                />
+                                <ZoomIn className="h-5 w-5" />
+                            </div>
+                        </div>
+                    )}
                 </CardContent>
             </Card>
 
@@ -75,7 +100,8 @@ export function PosterGenerator() {
                         alt="Uploaded photo"
                         layout="fill"
                         objectFit="cover"
-                        className="z-0"
+                        className="z-0 transition-transform duration-200"
+                        style={{ transform: `scale(${zoom / 100})` }}
                     />
                 )}
                 {posterFrameImage && (
