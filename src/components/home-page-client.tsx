@@ -139,7 +139,7 @@ export function HomePageClient({
                 )}
                 
                 <div className="mt-4 relative z-10">
-                  <h2 className="text-5xl font-bold">অধ্যক্ষ মুহাম্মদ নুরুল আমিন</h2>
+                  <h2 className="text-5xl font-bold animate-text-gradient">অধ্যক্ষ মুহাম্মদ নুরুল আমিন</h2>
                   <div className="inline-block bg-primary/80 text-primary-foreground px-6 py-2 rounded-lg mt-2 text-3xl font-semibold shadow-lg">
                     সংসদ সদস্য পদপ্রার্থী
                   </div>
