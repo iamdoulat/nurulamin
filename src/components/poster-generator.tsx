@@ -10,6 +10,7 @@ import { Label } from './ui/label';
 import { Card, CardContent } from './ui/card';
 import { Download } from 'lucide-react';
 import { motion, PanInfo } from 'framer-motion';
+import { Slider } from './ui/slider';
 
 export function PosterGenerator() {
   const [uploadedImage, setUploadedImage] = useState<string | null>(null);
@@ -88,6 +89,19 @@ export function PosterGenerator() {
                 />
               </div>
               <p className="text-xs text-muted-foreground mt-2">Accepted file types: JPG, PNG, GIF</p>
+              {uploadedImage && (
+                <div className="mt-4 space-y-2">
+                  <Label htmlFor="zoom-slider">Adjust Zoom</Label>
+                  <Slider
+                    id="zoom-slider"
+                    min={0.5}
+                    max={4}
+                    step={0.01}
+                    value={[scale]}
+                    onValueChange={(value) => setScale(value[0])}
+                  />
+                </div>
+              )}
             </CardContent>
           </Card>
 
