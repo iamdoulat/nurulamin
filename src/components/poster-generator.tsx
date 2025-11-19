@@ -131,7 +131,7 @@ export function PosterGenerator() {
                 dragMomentum={false}
               >
                 <motion.div
-                  className="w-full h-full bg-cover bg-center"
+                  className="w-full h-full bg-cover"
                   style={{ 
                     backgroundImage: `url(${uploadedImage})`,
                   }}
@@ -145,7 +145,7 @@ export function PosterGenerator() {
                 src={posterFrameImage.imageUrl}
                 alt="Poster frame"
                 layout="fill"
-                objectFit="contain"
+                objectFit="cover"
                 className="z-10 pointer-events-none"
                 data-ai-hint={posterFrameImage.imageHint}
                 crossOrigin="anonymous"
