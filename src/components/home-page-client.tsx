@@ -52,7 +52,7 @@ export function HomePageClient({
 
   return (
     <>
-      <section id="home" className="container py-12 sm:py-20 bg-background text-white font-headline">
+      <section id="home" className="container py-12 sm:py-20 bg-[hsl(140_70%_10%)] text-white font-headline">
         <motion.div
           initial="hidden"
           whileInView="show"
@@ -76,7 +76,7 @@ export function HomePageClient({
               variants={FADE_UP_ANIMATION_VARIANTS}
               className="text-5xl md:text-6xl font-bold text-center"
             >
-              সমৃদ্ধ বাঁশখালী বিনির্মানে
+              সমৃদ্ধ ফটিকছড়ি বিনির্মানে
             </motion.h1>
             <motion.ul variants={FADE_UP_ANIMATION_VARIANTS} className="grid grid-cols-2 gap-x-4 gap-y-2 text-lg">
               {visionPoints.map((point, index) => (
@@ -96,7 +96,7 @@ export function HomePageClient({
               <Button variant="destructive" size="lg" className="bg-accent text-accent-foreground font-bold text-lg rounded-md border-2 border-accent hover:bg-accent/90">
                 Join With Us
               </Button>
-              <Button variant="outline" size="lg" className="font-bold text-lg rounded-md border-2 border-white text-white bg-transparent hover:bg-white hover:text-background">
+              <Button variant="outline" size="lg" className="font-bold text-lg rounded-md border-2 border-white text-white bg-transparent hover:bg-white hover:text-black">
                 Donate Now
               </Button>
             </motion.div>
@@ -105,13 +105,13 @@ export function HomePageClient({
             <div className="bg-gradient-to-br from-green-900 via-green-800 to-green-900/50 p-4 rounded-2xl shadow-2xl shadow-primary/20">
               <div className="relative text-center p-4">
                 <div className="absolute inset-0 bg-[url('https://www.svgrepo.com/show/448259/balance.svg')] bg-no-repeat bg-center opacity-10 bg-contain" style={{ backgroundSize: '50%'}}></div>
-                <h3 className="text-3xl font-bold">সমৃদ্ধ বাঁশখালী</h3>
+                <h3 className="text-3xl font-bold">সমৃদ্ধ ফটিকছড়ি</h3>
                 <p className="text-2xl mb-4">আমাদের অঙ্গীকার</p>
                 
                 {candidateImage && (
                   <Image
                     src={candidateImage.imageUrl}
-                    alt="অধ্যক্ষ জহিরুল ইসলাম"
+                    alt="অধ্যক্ষ মুহাম্মদ নুরুল আমিন"
                     width={450}
                     height={450}
                     className="rounded-lg mx-auto shadow-lg relative z-10"
@@ -121,11 +121,11 @@ export function HomePageClient({
                 )}
                 
                 <div className="mt-4 relative z-10">
-                  <h2 className="text-5xl font-bold">অধ্যক্ষ জহিরুল ইসলাম</h2>
+                  <h2 className="text-5xl font-bold">অধ্যক্ষ মুহাম্মদ নুরুল আমিন</h2>
                   <div className="inline-block bg-primary/80 text-primary-foreground px-6 py-2 rounded-lg mt-2 text-3xl font-semibold shadow-lg">
-                    সংসদ সদস্য পদপ্রার্থী
+                    সংসদ সদস্য पदप्रার্থী
                   </div>
-                  <p className="text-2xl mt-2">চট্টগ্রাম-১৬ (বাঁশখালী)</p>
+                  <p className="text-2xl mt-2">ফটিকছড়ি-২</p>
                 </div>
               </div>
             </div>
