@@ -1,3 +1,4 @@
+
 'use client';
 
 import Image from 'next/image';
@@ -50,7 +51,7 @@ export function HomePageClient({
 
   return (
     <>
-      <section id="home" className="bg-background text-white font-headline">
+      <section id="home" className="bg-green-950 text-white font-headline">
         <motion.div
           initial="hidden"
           whileInView="show"
