@@ -47,7 +47,7 @@ export function HomePageClient({}: HomePageClientProps) {
 
   return (
     <>
-      <section id="home" className="bg-green-950 text-white font-headline">
+      <section id="home" className="bg-green-950 text-white font-headline pb-20">
         <motion.div
           initial="hidden"
           whileInView="show"
@@ -139,7 +139,7 @@ export function HomePageClient({}: HomePageClientProps) {
       </section>
 
       <section className="bg-white dark:bg-gray-900 py-12 md:py-16 font-headline">
-        <div className="container mx-auto">
+        <div className="container mx-auto -mt-[100px] relative z-10">
           <motion.div 
             initial="hidden"
             whileInView="show"
