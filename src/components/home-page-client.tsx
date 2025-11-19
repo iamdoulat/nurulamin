@@ -4,6 +4,7 @@
 import Image from 'next/image';
 import { Check } from 'lucide-react';
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 
 import type { BlogPost, Education, Experience, Project, Service, SkillCategory, Testimonial } from '@/lib/types';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
@@ -105,8 +106,13 @@ export function HomePageClient({
               variants={FADE_UP_ANIMATION_VARIANTS}
               className="flex items-center justify-center gap-4"
             >
-              <Button variant="destructive" size="lg" className="bg-accent text-accent-foreground font-bold text-lg rounded-md border-2 border-accent hover:bg-accent/90">
-                Join With Us
+              <Button asChild variant="destructive" size="lg" className="bg-accent text-accent-foreground font-bold text-lg rounded-md border-2 border-accent hover:bg-accent/90">
+                <Link href="#contact" onClick={(e) => {
+                  e.preventDefault();
+                  document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' });
+                }}>
+                  Contact us
+                </Link>
               </Button>
               <Button variant="outline" size="lg" className="font-bold text-lg rounded-md border-2 border-white text-white bg-transparent hover:bg-white hover:text-black">
                 Donate Now
