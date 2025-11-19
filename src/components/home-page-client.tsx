@@ -46,7 +46,7 @@ export function HomePageClient({}: HomePageClientProps) {
 
   return (
     <>
-      <section id="home" className="bg-green-950 text-white font-headline pb-20">
+      <section id="home" className="bg-green-950 text-white font-headline pb-32">
         <motion.div
           initial="hidden"
           whileInView="show"
