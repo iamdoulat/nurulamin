@@ -138,29 +138,16 @@ export function HomePageClient({}: HomePageClientProps) {
       </section>
 
       <section className="bg-white dark:bg-gray-900 pt-12 md:pt-16 font-headline">
-        <div className="container mx-auto -mt-[150px] relative z-10">
+        <div className="container mx-auto -mt-[200px] relative z-10 mt-12">
           <motion.div 
             initial="hidden"
             whileInView="show"
             viewport={{ once: true }}
             variants={FADE_UP_ANIMATION_VARIANTS}
-            className="bg-gradient-to-r from-green-700 via-green-800 to-red-800 text-white rounded-xl shadow-2xl p-8 border-4 border-white"
+            className="bg-gradient-to-r from-green-700 via-green-800 to-red-800 text-white rounded-xl shadow-2xl p-8 pt-12 border-4 border-white"
           >
             <h3 className="text-4xl text-center font-bold mb-8 underline underline-offset-8">জনপদের সেবায়, জনতার ভালোবাসায়</h3>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center mt-12">
-              <div>
-                <p className="text-5xl font-bold">4 টি</p>
-                <p className="text-xl">নির্বাচনের মধ্যে</p>
-              </div>
-              <div>
-                <p className="text-5xl font-bold text-yellow-300">3 টি</p>
-                <p className="text-xl">নির্বাচনে বিজয়</p>
-              </div>
-              <div>
-                <p className="text-5xl font-bold">162,000+</p>
-                <p className="text-xl">জনতার রায়</p>
-              </div>
-            </div>
+            
             <motion.div 
             initial="hidden"
             whileInView="show"
