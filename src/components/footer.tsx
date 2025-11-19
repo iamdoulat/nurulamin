@@ -45,7 +45,7 @@ export function Footer() {
                 <div className="bg-white p-1 rounded-lg shadow-lg flex-shrink-0">
                   <Image
                     src={candidateImage.imageUrl}
-                    alt="অধ্যক্ষ মাওলানা জহিরুল ইসলাম"
+                    alt="অধ্যক্ষ মুহাম্মদ নুরুল আমিন"
                     width={120}
                     height={120}
                     className="rounded-md"
@@ -53,12 +53,8 @@ export function Footer() {
                 </div>
               )}
               <div>
-                <h3 className="text-2xl font-bold">অধ্যক্ষ মাওলানা জহিরুল ইসলাম</h3>
-                <p className="text-sm">সংসদ সদস্য প্রার্থী, চট্টগ্রাম-১৬ (বাঁশখালী)</p>
-                <p className="text-xs mt-1">
-                  সাবেক সফল উপজেলা চেয়ারম্যান এবং এসিসট্যান্ট সেক্রেটারী, বাংলাদেশ জামায়াতে ইসলামী,
-                  চট্টগ্রাম দক্ষিণ জেলা।
-                </p>
+                <h3 className="text-2xl font-bold">অধ্যক্ষ মুহাম্মদ নুরুল আমিন</h3>
+                <p className="text-sm">সংসদ সদস্য পদপ্রার্থী, চট্টগ্রাম-২ (ফটিকছড়ি)</p>
                 <div className="flex gap-2 mt-4 justify-center md:justify-start">
                   <Button size="icon" variant="ghost" className="bg-blue-600 hover:bg-blue-700">
                     <Facebook className="h-5 w-5 text-white" />
@@ -99,7 +95,7 @@ export function Footer() {
       {/* Bottom Bar */}
       <div className="bg-black text-gray-400 py-4 relative">
         <div className="container text-center text-sm">
-          <span>Copyright © {new Date().getFullYear()} Zahirul Islam</span>
+          <span>Copyright © {new Date().getFullYear()} Nurul Amin</span>
           <span className="mx-2">|</span>
           <span>
             Developed by <a href="#" className="text-blue-400 hover:underline">Educellit</a>
