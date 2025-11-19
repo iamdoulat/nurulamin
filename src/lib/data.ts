@@ -33,7 +33,7 @@ export const siteConfig = {
 
 export const navItems: NavItem[] = [
   { title: 'Home', href: '#home' },
-  { title: 'Contact', href: '#contact' },
+  { title: 'Contact Us', href: '#contact' },
 ];
 
 export const socialLinks: { name: string; href: string; icon: LucideIcon }[] = [
