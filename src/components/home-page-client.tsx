@@ -50,7 +50,7 @@ export function HomePageClient({
 
   return (
     <>
-      <section id="home" className="bg-[hsl(140_70%_10%)] text-white font-headline">
+      <section id="home" className="bg-background text-white font-headline">
         <motion.div
           initial="hidden"
           whileInView="show"
@@ -64,7 +64,7 @@ export function HomePageClient({
               },
             },
           }}
-          className="container grid grid-cols-1 lg:grid-cols-2 gap-12 items-center pt-[10px] pb-12 sm:pb-20"
+          className="container grid grid-cols-1 lg:grid-cols-2 gap-12 items-center pt-[15px] pb-12 sm:pb-20"
         >
           <div className="space-y-8 lg:order-1 order-2">
             <motion.div variants={FADE_UP_ANIMATION_VARIANTS} className="border border-primary/50 rounded-full px-8 py-3 text-center text-2xl text-primary shadow-[0_0_20px] shadow-primary/50">
@@ -123,7 +123,7 @@ export function HomePageClient({
                   <div className="inline-block bg-primary/80 text-primary-foreground px-6 py-2 rounded-lg mt-2 text-3xl font-semibold shadow-lg">
                     সংসদ সদস্য পদপ্রার্থী
                   </div>
-                  <p className="text-2xl mt-2">ফটিকছড়ি-২</p>
+                  <p className="text-2xl mt-2">চট্টগ্রাম-২ (ফটিকছড়ি)</p>
                 </div>
               </div>
             </div>
@@ -229,10 +229,8 @@ export function HomePageClient({
           description="Have a project in mind or just want to say hello? Feel free to reach out."
           className="mb-12"
         />
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-          <div>
+        <div className="max-w-xl mx-auto">
             <ContactForm />
-          </div>
         </div>
       </section>
     </>
