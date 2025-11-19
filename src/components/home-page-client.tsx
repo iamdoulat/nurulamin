@@ -1,4 +1,3 @@
-
 'use client';
 
 import Image from 'next/image';
@@ -69,7 +68,7 @@ export function HomePageClient({}: HomePageClientProps) {
             </motion.div>
             <motion.h1
               variants={FADE_UP_ANIMATION_VARIANTS}
-              className="text-5xl pt-5 md:text-6xl font-bold text-center"
+              className="text-5xl pt-5 md:text-6xl font-bold text-center text-white"
             >
               সমৃদ্ধ ফটিকছড়ি বিনির্মানে
             </motion.h1>
@@ -83,7 +82,7 @@ export function HomePageClient({}: HomePageClientProps) {
                 {visionPoints.map((point, index) => (
                   <li key={index} className="flex items-center gap-2">
                     <Check className="h-5 w-5 text-primary" />
-                    <span>{point}{index < visionPoints.length - 1 ? ',' : ''}</span>
+                    <span className='text-white'>{point}{index < visionPoints.length - 1 ? ',' : ''}</span>
                   </li>
                 ))}
               </ul>
@@ -138,7 +137,7 @@ export function HomePageClient({}: HomePageClientProps) {
         </motion.div>
       </section>
 
-      <section className="bg-white dark:bg-gray-900 py-12 md:py-16 font-headline">
+      <section className="bg-white dark:bg-gray-900 pt-12 md:pt-16 font-headline">
         <div className="container mx-auto -mt-[150px] relative z-10">
           <motion.div 
             initial="hidden"
@@ -147,24 +146,22 @@ export function HomePageClient({}: HomePageClientProps) {
             variants={FADE_UP_ANIMATION_VARIANTS}
             className="bg-gradient-to-r from-green-700 via-green-800 to-red-800 text-white rounded-xl shadow-2xl p-8 border-4 border-white"
           >
-            <h3 className="text-4xl text-center font-bold mb-8">জনপদের সেবায়, জনতার ভালোবাসায়</h3>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center mt-8">
-                <div>
-                  <h4 className="text-6xl font-bold">4 টি</h4>
-                  <p className="text-xl mt-2">নির্বাচনের মধ্যে</p>
-                </div>
-                <div>
-                  <h4 className="text-6xl font-bold text-yellow-300">3 টি</h4>
-                  <p className="text-xl mt-2">নির্বাচনে বিজয়</p>
-                </div>
-                <div>
-                  <h4 className="text-6xl font-bold">162,000+</h4>
-                  <p className="text-xl mt-2">জনতার রায়</p>
-                </div>
+            <h3 className="text-4xl text-center font-bold mb-8 underline underline-offset-8">জনপদের সেবায়, জনতার ভালোবাসায়</h3>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center mt-12">
+              <div>
+                <p className="text-5xl font-bold">4 টি</p>
+                <p className="text-xl">নির্বাচনের মধ্যে</p>
               </div>
-          </motion.div>
-          
-          <motion.div 
+              <div>
+                <p className="text-5xl font-bold text-yellow-300">3 টি</p>
+                <p className="text-xl">নির্বাচনে বিজয়</p>
+              </div>
+              <div>
+                <p className="text-5xl font-bold">162,000+</p>
+                <p className="text-xl">জনতার রায়</p>
+              </div>
+            </div>
+            <motion.div 
             initial="hidden"
             whileInView="show"
             viewport={{ once: true }}
@@ -172,9 +169,9 @@ export function HomePageClient({}: HomePageClientProps) {
             className="text-center mt-12 relative"
           >
             <div className="absolute inset-0 bg-[url('https://res.cloudinary.com/dzepzzvh8/image/upload/v1763665380/Nurulamin/vote-bg_jze1jf.png')] bg-no-repeat bg-center opacity-10" />
-
-            <p className="text-3xl text-gray-700 dark:text-gray-300">আসন্ন জাতীয় সংসদ নির্বাচনে চট্টগ্রাম-২ (ফটিকছড়ি) থেকে, ন্যায় ও ইনসাফের প্রতীক</p>
+            <p className="text-3xl text-gray-200 dark:text-gray-300">আসন্ন জাতীয় সংসদ নির্বাচনে চট্টগ্রাম-২ (ফটিকছড়ি) থেকে, ন্যায় ও ইনসাফের প্রতীক</p>
             <h2 className="text-8xl font-bold text-red-600 my-4 drop-shadow-lg">দাঁড়িপাল্লা, ইনশাআল্লাহ</h2>
+          </motion.div>
           </motion.div>
         </div>
       </section>
