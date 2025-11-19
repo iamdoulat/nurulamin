@@ -94,7 +94,7 @@ export function HomePageClient({
               <ul className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-xl text-center">
                 {visionPoints.map((point, index) => (
                   <li key={index} className="flex items-center gap-2">
-                    <span className='text-primary'>••</span>
+                    <Check className="h-5 w-5 text-primary" />
                     <span>{point}{index < visionPoints.length - 1 ? ',' : ''}</span>
                   </li>
                 ))}
@@ -145,7 +145,7 @@ export function HomePageClient({
         </motion.div>
       </section>
 
-      <main className="bg-background">
+      <main>
         <section id="about" className="container py-12 md:py-24">
           <SectionHeading
             title="About Me"
