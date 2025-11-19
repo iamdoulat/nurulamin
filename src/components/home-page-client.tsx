@@ -79,15 +79,19 @@ export function HomePageClient({
           className="container grid grid-cols-1 lg:grid-cols-2 gap-12 items-center pt-[15px] pb-12 sm:pb-20"
         >
           <div className="space-y-8 lg:order-1 order-2">
-            <motion.div variants={FADE_UP_ANIMATION_VARIANTS} className="border border-primary/50 rounded-full px-8 py-3 text-center text-2xl text-primary shadow-[0_0_20px] shadow-primary/50">
+            <motion.div variants={FADE_UP_ANIMATION_VARIANTS} className="border border-primary/50 rounded-full px-8 py-3 text-center text-5xl text-primary shadow-[0_0_20px] shadow-primary/50">
               আমাদের ভিশন!
             </motion.div>
             <motion.h1
               variants={FADE_UP_ANIMATION_VARIANTS}
-              className="text-5xl md:text-6xl font-bold text-center"
+              className="text-5xl pt-5 md:text-6xl font-bold text-center"
             >
               সমৃদ্ধ ফটিকছড়ি বিনির্মানে
             </motion.h1>
+            
+            <motion.div variants={FADE_UP_ANIMATION_VARIANTS}>
+              <TypingAnimation phrases={animatedPhrases} />
+            </motion.div>
             
             <motion.div variants={FADE_UP_ANIMATION_VARIANTS}>
               <ul className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-xl text-center">
@@ -99,8 +103,6 @@ export function HomePageClient({
                 ))}
               </ul>
             </motion.div>
-
-            <TypingAnimation phrases={animatedPhrases} />
 
             <motion.div
               variants={FADE_UP_ANIMATION_VARIANTS}
@@ -120,10 +122,10 @@ export function HomePageClient({
             </motion.div>
           </div>
           <motion.div variants={FADE_UP_ANIMATION_VARIANTS} className="relative flex justify-center lg:order-2 order-1">
-            <div className="bg-gradient-to-br from-green-900 via-green-800 to-green-900/50 p-4 rounded-2xl shadow-2xl shadow-primary/20">
+            <div className="bg-gradient-to-br from-green-900 via-green-800 to-green-900/50 p-1 rounded-2xl shadow-2xl shadow-primary/20">
               <div className="relative text-center p-4">
                 <div className="absolute inset-0 bg-[url('https://www.svgrepo.com/show/448259/balance.svg')] bg-no-repeat bg-center opacity-10 bg-contain" style={{ backgroundSize: '50%'}}></div>
-                <h3 className="text-5xl font-bold animate-text-gradient">সমৃদ্ধ ফটিকছড়ি</h3>
+                <h3 className="text-5xl pt-3 font-bold animate-text-gradient">সমৃদ্ধ ফটিকছড়ি</h3>
                 <p className="text-2xl mb-4">আমাদের অঙ্গীকার</p>
                 
                 {candidateImage && (
@@ -132,14 +134,14 @@ export function HomePageClient({
                     alt="অধ্যক্ষ মুহাম্মদ নুরুল আমিন"
                     width={450}
                     height={488}
-                    className="rounded-lg mx-auto shadow-lg relative z-10"
+                    className="rounded-lg mx-auto shadow-lg relative z-10 object-contain"
                     priority
                     data-ai-hint={candidateImage.imageHint}
                   />
                 )}
                 
                 <div className="mt-4 relative z-10">
-                  <h2 className="text-5xl font-bold animate-text-gradient">অধ্যক্ষ মুহাম্মদ নুরুল আমিন</h2>
+                  <h2 className="text-5xl pt-2 font-bold">অধ্যক্ষ মুহাম্মদ নুরুল আমিন</h2>
                   <div className="inline-block bg-primary/80 text-primary-foreground px-6 py-2 rounded-lg mt-2 text-3xl font-semibold shadow-lg">
                     সংসদ সদস্য পদপ্রার্থী
                   </div>
