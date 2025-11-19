@@ -11,13 +11,7 @@ import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { about } from '@/lib/data';
 import { Button } from './ui/button';
 import { SectionHeading } from './section-heading';
-import { ProjectCard } from './project-card';
-import { TestimonialCard } from './testimonial-card';
 import { ContactForm } from './contact-form';
-import { Timeline } from './timeline';
-import { SkillsGrid } from './skills-grid';
-import { ServiceCard } from './service-card';
-import { BlogCard } from './blog-card';
 import { TypingAnimation } from './animations/typing-animation';
 
 type HomePageClientProps = {
@@ -31,16 +25,7 @@ type HomePageClientProps = {
   testimonials: Testimonial[];
 };
 
-export function HomePageClient({
-  posts,
-  projects,
-  about,
-  experiences,
-  education,
-  skillCategories,
-  services,
-  testimonials,
-}: HomePageClientProps) {
+export function HomePageClient({}: HomePageClientProps) {
   const FADE_UP_ANIMATION_VARIANTS = {
     hidden: { opacity: 0, y: 10 },
     show: { opacity: 1, y: 0, transition: { type: 'spring' } },
@@ -134,7 +119,7 @@ export function HomePageClient({
                     alt="অধ্যক্ষ মুহাম্মদ নুরুল আমিন"
                     width={450}
                     height={488}
-                    className="rounded-lg mx-auto shadow-lg relative z-10 object-contain"
+                    className="rounded-lg mx-auto shadow-lg relative z-10"
                     priority
                     data-ai-hint={candidateImage.imageHint}
                   />
@@ -151,6 +136,47 @@ export function HomePageClient({
             </div>
           </motion.div>
         </motion.div>
+      </section>
+
+      <section className="bg-white dark:bg-gray-900 py-12 md:py-16 font-headline">
+        <div className="container mx-auto">
+          <motion.div 
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true }}
+            variants={FADE_UP_ANIMATION_VARIANTS}
+            className="bg-gradient-to-r from-green-700 via-green-800 to-red-800 text-white rounded-xl shadow-2xl p-8 border-4 border-white"
+          >
+            <h3 className="text-4xl text-center font-bold mb-8">জনপদের সেবায়, জনতার ভালোবাসায়</h3>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 text-center">
+              <div>
+                <p className="text-6xl font-bold text-yellow-300">4 টি</p>
+                <p className="text-2xl mt-2">নির্বাচনের মধ্যে</p>
+              </div>
+              <div>
+                <p className="text-6xl font-bold text-yellow-300">3 টি</p>
+                <p className="text-2xl mt-2">নির্বাচনে বিজয়</p>
+              </div>
+              <div>
+                <p className="text-6xl font-bold text-yellow-300">162,000+</p>
+                <p className="text-2xl mt-2">জনতার রায়</p>
+              </div>
+            </div>
+          </motion.div>
+          
+          <motion.div 
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true }}
+            variants={FADE_UP_ANIMATION_VARIANTS}
+            className="text-center mt-12 relative"
+          >
+            <div className="absolute inset-0 bg-[url('https://res.cloudinary.com/dzepzzvh8/image/upload/v1763665380/Nurulamin/vote-bg_jze1jf.png')] bg-no-repeat bg-center opacity-10" />
+
+            <p className="text-3xl text-gray-700 dark:text-gray-300">আসন্ন জাতীয় সংসদ নির্বাচনে চট্টগ্রাম-১৬, বাঁশখালী থেকে, ন্যায় ও ইনসাফের প্রতীক</p>
+            <h2 className="text-8xl font-bold text-red-600 my-4 drop-shadow-lg">দাঁড়িপাল্লা, ইনশাআল্লাহ</h2>
+          </motion.div>
+        </div>
       </section>
 
       <main>
