@@ -73,11 +73,11 @@ export default function Header() {
             e.preventDefault();
             document.querySelector('#home')?.scrollIntoView({ behavior: 'smooth' });
             }}>
-            <Image src="https://res.cloudinary.com/dzepzzvh8/image/upload/v1763565587/Nurulamin/logo_qbjmpf.png" alt={siteConfig.name} width={140} height={40} />
+            <Image src="https://res.cloudinary.com/dzepzzvh8/image/upload/v1763565587/Nurulamin/logo_qbjmpf.png" alt={siteConfig.name} width={154} height={44} />
             </Link>
         </div>
         
-        <div className="flex items-center space-x-4">
+        <div className="ml-auto flex items-center space-x-4">
           <nav className="relative hidden items-center space-x-6 text-sm font-medium md:flex">
             <AnimatePresence>
               {navItems.map((item) => (
@@ -99,7 +99,7 @@ export default function Header() {
                   document.querySelector('#home')?.scrollIntoView({ behavior: 'smooth' });
                   setIsMobileMenuOpen(false);
                 }}>
-                 <Image src="https://res.cloudinary.com/dzepzzvh8/image/upload/v1763565587/Nurulamin/logo_qbjmpf.png" alt={siteConfig.name} width={140} height={40} />
+                 <Image src="https://res.cloudinary.com/dzepzzvh8/image/upload/v1763565587/Nurulamin/logo_qbjmpf.png" alt={siteConfig.name} width={154} height={44} />
               </Link>
               <div className="mt-6 flex flex-col space-y-4">
                 {navItems.map((item) => (
