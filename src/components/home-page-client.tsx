@@ -139,7 +139,7 @@ export function HomePageClient({}: HomePageClientProps) {
       </section>
 
       <section className="bg-white dark:bg-gray-900 py-12 md:py-16 font-headline">
-        <div className="container mx-auto -mt-[200px] relative z-10">
+        <div className="container mx-auto -mt-[150px] relative z-10">
           <motion.div 
             initial="hidden"
             whileInView="show"
