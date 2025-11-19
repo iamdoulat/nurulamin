@@ -1,6 +1,8 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import { Code, Palette, Search, Server, Webhook } from 'lucide-react';
+
 import type { Service } from '@/lib/types';
 import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
 
@@ -8,8 +10,17 @@ interface ServiceCardProps {
   service: Service;
 }
 
+const iconMap: { [key: string]: React.ElementType } = {
+  Code,
+  Palette,
+  Server,
+  Search,
+  Webhook,
+};
+
 export function ServiceCard({ service }: ServiceCardProps) {
-  const { icon: Icon, title, description } = service;
+  const { icon, title, description } = service;
+  const Icon = iconMap[icon as string] || Code;
 
   const FADE_UP_ANIMATION_VARIANTS = {
     hidden: { opacity: 0, y: 10 },

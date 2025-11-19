@@ -1,3 +1,5 @@
+import { LucideIcon } from "lucide-react";
+
 export type NavItem = {
   title: string;
   href: string;
@@ -17,7 +19,7 @@ export type Project = {
 export type Service = {
   title: string;
   description: string;
-  icon: React.ElementType;
+  icon: string | LucideIcon;
 };
 
 export type SkillCategory = {
@@ -34,7 +36,7 @@ export type Experience = {
   role: string;
   company: string;
   period: string;
-  description: string;
+  description:string;
 };
 
 export type Education = {
