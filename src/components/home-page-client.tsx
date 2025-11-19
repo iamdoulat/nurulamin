@@ -61,7 +61,7 @@ export function HomePageClient({}: HomePageClientProps) {
               },
             },
           }}
-          className="container grid grid-cols-1 lg:grid-cols-2 gap-12 items-center pt-[15px] pb-12 sm:pb-20"
+          className="container grid grid-cols-1 lg:grid-cols-2 gap-12 items-center pt-[15px] pb-20 sm:pb-[130px]"
         >
           <div className="space-y-8 lg:order-1 order-2">
             <motion.div variants={FADE_UP_ANIMATION_VARIANTS} className="border border-primary/50 rounded-full px-8 py-3 text-center text-5xl text-primary shadow-[0_0_20px] shadow-primary/50">
@@ -139,7 +139,7 @@ export function HomePageClient({}: HomePageClientProps) {
       </section>
 
       <section className="bg-white dark:bg-gray-900 pt-12 md:pt-16 font-headline">
-        <div className="container mx-auto -mt-[200px] relative z-10 mt-12">
+        <div className="container mx-auto -mt-[200px] relative z-10">
           <motion.div 
             initial="hidden"
             whileInView="show"
