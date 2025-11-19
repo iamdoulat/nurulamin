@@ -90,6 +90,17 @@ export function HomePageClient({
             
             <TypingAnimation phrases={animatedPhrases} />
 
+            <motion.div variants={FADE_UP_ANIMATION_VARIANTS}>
+              <ul className="space-y-3 text-xl text-center">
+                {visionPoints.map((point, index) => (
+                  <li key={index} className="flex items-center justify-center gap-3">
+                    <Check className="h-6 w-6 text-primary" />
+                    <span>{point}</span>
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
+
             <motion.div
               variants={FADE_UP_ANIMATION_VARIANTS}
               className="flex items-center justify-center gap-4"
