@@ -9,7 +9,7 @@ import PageTransition from '@/components/animations/page-transition';
 import { siteConfig } from '@/lib/data';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
-const noto SansBengali = Noto_Sans_Bengali({
+const notoSansBengali = Noto_Sans_Bengali({
   subsets: ['bengali', 'latin'],
   variable: '--font-noto-sans-bengali',
 });
@@ -53,11 +53,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning style={{ scrollBehavior: 'smooth' }}>
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Space+Grotesk:wght@500;700&family=Noto+Sans+Bengali:wght@400;500;700&display=swap" rel="stylesheet" />
-      </head>
       <body className={`${inter.variable} ${notoSansBengali.variable} font-body antialiased bg-background`}>
         <ThemeProvider
           attribute="class"

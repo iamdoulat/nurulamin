@@ -104,7 +104,7 @@ export function HomePageClient({
           <motion.div variants={FADE_UP_ANIMATION_VARIANTS} className="relative flex justify-center">
             <div className="bg-gradient-to-br from-green-900 via-green-800 to-green-900/50 p-4 rounded-2xl shadow-2xl shadow-primary/20">
               <div className="relative text-center p-4">
-                <div className="absolute inset-0 bg-[url('https://www.svgrepo.com/show/448259/balance.svg')] bg-no-repeat bg-center opacity-10 bg-contain " style={{ backgroundSize: '50%'}}></div>
+                <div className="absolute inset-0 bg-[url('https://www.svgrepo.com/show/448259/balance.svg')] bg-no-repeat bg-center opacity-10 bg-contain" style={{ backgroundSize: '50%'}}></div>
                 <h3 className="text-3xl font-bold">সমৃদ্ধ বাঁশখালী</h3>
                 <p className="text-2xl mb-4">আমাদের অঙ্গীকার</p>
                 
