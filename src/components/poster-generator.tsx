@@ -8,13 +8,15 @@ import { Button } from './ui/button';
 import { Input } from './ui/input';
 import { Label } from './ui/label';
 import { Card, CardContent } from './ui/card';
-import { Download, ZoomIn, ZoomOut } from 'lucide-react';
+import { Download, ZoomIn, ZoomOut, Move } from 'lucide-react';
 import { Slider } from './ui/slider';
+import { motion } from 'framer-motion';
 
 export function PosterGenerator() {
   const [uploadedImage, setUploadedImage] = useState<string | null>(null);
   const [zoom, setZoom] = useState(100);
   const posterRef = useRef<HTMLDivElement>(null);
+  const constraintsRef = useRef<HTMLDivElement>(null);
 
   const posterFrameImage = PlaceHolderImages.find((img) => img.id === 'poster-frame');
 
@@ -74,7 +76,7 @@ export function PosterGenerator() {
                                 <Slider
                                     id="zoom-slider"
                                     min={50}
-                                    max={200}
+                                    max={300}
                                     step={1}
                                     value={[zoom]}
                                     onValueChange={handleZoomChange}
@@ -94,23 +96,28 @@ export function PosterGenerator() {
 
         <div>
             <div ref={posterRef} className="relative w-full max-w-[600px] mx-auto aspect-[1/1] overflow-hidden">
-                {uploadedImage && (
-                    <Image
-                        src={uploadedImage}
-                        alt="Uploaded photo"
-                        layout="fill"
-                        objectFit="cover"
-                        className="z-0 transition-transform duration-200"
-                        style={{ transform: `scale(${zoom / 100})` }}
-                    />
-                )}
+                 <div ref={constraintsRef} className="absolute inset-0 z-0">
+                    {uploadedImage && (
+                        <motion.div
+                            className="w-full h-full cursor-grab active:cursor-grabbing"
+                            drag
+                            dragConstraints={constraintsRef}
+                            style={{
+                                backgroundImage: `url(${uploadedImage})`,
+                                backgroundSize: `${zoom}%`,
+                                backgroundPosition: 'center',
+                                backgroundRepeat: 'no-repeat',
+                            }}
+                        />
+                    )}
+                </div>
                 {posterFrameImage && (
                      <Image
                         src={posterFrameImage.imageUrl}
                         alt="Poster frame"
                         layout="fill"
                         objectFit="contain"
-                        className="z-10"
+                        className="z-10 pointer-events-none"
                         data-ai-hint={posterFrameImage.imageHint}
                         crossOrigin="anonymous"
                     />
